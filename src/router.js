@@ -32,6 +32,24 @@ const routers = [
 	    component: (resolve) => require(['./views/test.vue'], resolve)
 	},
 	{
+		path: '/portfolio',
+		meta: {
+			title: 'portfolio',
+			requireAuth: true
+		},
+        component: (resolve) => require(['./views/portfolio/portfolio.vue'], resolve),
+		children:[
+			{
+                path: 'brief',
+                name: 'brief',
+                component: (resolve) => require(['./views/portfolio/brief.vue'], resolve),
+                meta: {
+                    title:"portfolio brief"
+                }
+			}
+		]
+	},
+	{
 	    path: '/base',
 	    meta: {
 	        title: 'base',
