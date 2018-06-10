@@ -1,23 +1,23 @@
 webpackJsonp([1],{
 
-/***/ 49:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(72)
+__webpack_require__(220)
 
-var Component = __webpack_require__(20)(
+var Component = __webpack_require__(85)(
   /* script */
-  __webpack_require__(59),
+  __webpack_require__(204),
   /* template */
-  __webpack_require__(83),
+  __webpack_require__(231),
   /* scopeId */
-  "data-v-37cb830d",
+  "data-v-26a753b4",
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\projects\\wh-web-master\\src\\views\\base\\base.vue"
+Component.options.__file = "D:\\projects\\snail-web\\src\\views\\base\\base.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] base.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -28,9 +28,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-37cb830d", Component.options)
+    hotAPI.createRecord("data-v-26a753b4", Component.options)
   } else {
-    hotAPI.reload("data-v-37cb830d", Component.options)
+    hotAPI.reload("data-v-26a753b4", Component.options)
   }
 })()}
 
@@ -39,7 +39,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 59:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -225,28 +225,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 72:
+/***/ 220:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 78:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "aef5b502e8e3c8956e0495c725cd6f9a.jpg";
 
 /***/ }),
 
-/***/ 79:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "31394b8ca50dd2067fdbc40ec4aa5836.jpg";
 
 /***/ }),
 
-/***/ 83:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -271,7 +271,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "layout-logo-left"
   }, [_c('img', {
     attrs: {
-      "src": __webpack_require__(78)
+      "src": __webpack_require__(223)
     }
   }), _vm._v(" "), _c('strong', [_vm._v("smallsnail-Wh")])]), _vm._v(" "), _c('Menu', {
     attrs: {
@@ -329,7 +329,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": __webpack_require__(79)
+      "src": __webpack_require__(224)
     }
   }), _vm._v(" "), _c('DropdownMenu', {
     staticClass: "dropdown-menu",
@@ -360,7 +360,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-37cb830d", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-26a753b4", module.exports)
   }
 }
 

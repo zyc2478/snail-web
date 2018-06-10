@@ -81,7 +81,7 @@
                         <img src="../../images/logo.jpg"></img>
                         <strong>smallsnail-Wh</strong>
                     </div>
-                <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']" @on-select="m=>{select(m)}">
+                <Menu npmactive-name="1-2" theme="dark" width="auto" :open-names="['1']" @on-select="m=>{select(m)}">
                     <Submenu v-for="pmenu in menuList" :name="pmenu.id" :key="pmenu.id">
                         <template slot="title">
                             <Icon :type="pmenu.icon"></Icon>

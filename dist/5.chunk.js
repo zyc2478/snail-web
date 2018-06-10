@@ -1,23 +1,23 @@
 webpackJsonp([5],{
 
-/***/ 56:
+/***/ 201:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(73)
+__webpack_require__(217)
 
-var Component = __webpack_require__(20)(
+var Component = __webpack_require__(85)(
   /* script */
-  __webpack_require__(67),
+  __webpack_require__(212),
   /* template */
-  __webpack_require__(84),
+  __webpack_require__(228),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\projects\\wh-web-master\\src\\views\\test\\test4.vue"
+Component.options.__file = "D:\\projects\\snail-web\\src\\views\\test\\test4.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] test4.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -28,9 +28,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3cd0aa57", Component.options)
+    hotAPI.createRecord("data-v-240a3a5e", Component.options)
   } else {
-    hotAPI.reload("data-v-3cd0aa57", Component.options)
+    hotAPI.reload("data-v-240a3a5e", Component.options)
   }
 })()}
 
@@ -39,7 +39,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 67:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67,14 +67,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 73:
+/***/ 217:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 84:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -86,7 +86,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3cd0aa57", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-240a3a5e", module.exports)
   }
 }
 
