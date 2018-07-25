@@ -21,6 +21,7 @@
     "vue-axios": "^2.1.1",
     "vue-goodshare": "^0.9.3",
     "vue-router": "^2.3.1",
+    "vue2-highcharts": "^1.2.5",
     "vuex": "^2.2.1"
   },
   "peerDependencies": {
