@@ -59,14 +59,6 @@
 <script>
     import VueHighcharts from 'vue2-highcharts'
     //Test code start
-    function requestData() {
-        $.ajax({
-            url: 'http://localhost:8080/bbd_ds/vwBidList/getVwBidList/30',
-            success: function(point) {
-            },
-            cache: false
-        });
-    }
 
     //Test code end
 
@@ -126,6 +118,9 @@
                 options: {
                     chart: {
                         type: 'spline',
+                        events: {
+                            load: requestData // 图表加载完毕后执行的回调函数
+                        }
                     },
                     title: {
                         text: 'Live random data'
@@ -151,85 +146,14 @@
             }
         },
         methods: {
-/*            load(){
+            load(){
                 let lineCharts = this.$refs.lineCharts;
                 lineCharts.delegateMethod('showLoading', 'Loading...');
-/!*                setTimeout(() => {
+                setTimeout(() => {
                     lineCharts.addSeries(requestData());
                     lineCharts.hideLoading();
-                }, 2000);*!/
-                this.getList();
-            },*/
-            load(){
-                let lineCharts = this.$refs.
-                var vm = this.$http.get('http://localhost:8080/bbd_ds/vwBidList/getVwBidList/30',{})
-                    .then(function (response) {
-                        vm.json = response.data
-                        lineCharts.chart('container', {
-                            chart: {
-                                zoomType: 'x'
-                            },
-                            title: {
-                                text: 'bidCount Over Time'
-                            },
-                            subtitle: {
-                                text: document.ontouchstart === undefined ?
-                                    'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-                            },
-                            xAxis: {
-                                type: 'datetime'
-                            },
-                            yAxis: {
-                                title: {
-                                    text: 'bidCount'
-                                }
-                            },
-                            legend: {
-                                enabled: false
-                            },
-                            plotOptions: {
-                                area: {
-                                    fillColor: {
-                                        linearGradient: {
-                                            x1: 0,
-                                            y1: 0,
-                                            x2: 0,
-                                            y2: 1
-                                        },
-                                        stops: [
-                                            [0, lineCharts.getOptions().colors[0]],
-                                            [1, lineCharts.Color(lineCharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                                        ]
-                                    },
-                                    marker: {
-                                        radius: 2
-                                    },
-                                    lineWidth: 1,
-                                    states: {
-                                        hover: {
-                                            lineWidth: 1
-                                        }
-                                    },
-                                    threshold: null
-                                }
-                            },
-
- /*                           series: [{
-                                type: 'area',
-                                name: 'Sessions',
-                                data: vm.json.map(d => [new Date(d.date).getTime(), d.sessions])
-                            }]*/
-                            series: [{
-                                type: 'area',
-                                name: 'Sessions',
-                                data: vm.json
-                                    .sort((a,b) => new Date(a.bid_date) - new Date(b.bid_date))
-                                    .map(d => [new Date(d.bid_date).getTime(), d.bid_count])
-                            }]
-                        });
-                    });
+                }, 2000)
             }
-
         }
     }
 </script>
