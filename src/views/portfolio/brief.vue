@@ -1,6 +1,6 @@
 <style type="text/css">
     .test{
-        margin: 20px 20px 20px 20px;     
+        margin: 20px 20px 20px 20px;
     }
     .test Button{
         margin-bottom: 10px;
@@ -46,7 +46,7 @@
                     console.log(error);
                 });
             }
-        }   
+        }
     };
 </script>-->
 <template>
@@ -58,64 +58,20 @@
 
 <script>
     import VueHighcharts from 'vue2-highcharts'
-    //Test code start
-    function requestData() {
-        $.ajax({
-            url: 'http://localhost:8080/bbd_ds/vwBidList/getVwBidList/30',
-            success: function(point) {
-            },
-            cache: false
-        });
-    }
-
-    //Test code end
-
-/*    const asyncData = {
+    const asyncData = {
         name: 'Tokyo',
-        marker: {
+/*        marker: {
             symbol: 'square'
-        },
+        },*/
         data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
             y: 26.5,
             marker: {
                 symbol: 'url(http://www.highcharts.com/demo/gfx/sun.png)'
             }
         }, 23.3, 18.3, 13.9, 9.6]
-    }*/
+    }
 
-/*
-    var chart = null; // 定义全局变量
-    $(document).ready(function() {
-        chart = Highcharts.chart('container', {
-            chart: {
-                type: 'spline',
-                events: {
-                    load: requestData // 图表加载完毕后执行的回调函数
-                }
-            },
-            title: {
-                text: 'Live random data'
-            },
-            xAxis: {
-                type: 'datetime',
-                tickPixelInterval: 150,
-                maxZoom: 20 * 1000
-            },
-            yAxis: {
-                minPadding: 0.2,
-                maxPadding: 0.2,
-                title: {
-                    text: 'Value',
-                    margin: 80
-                }
-            },
-            series: [{
-                name: '随机数据',
-                data: []
-            }]
-        });
-    });
-*/
+    const asyncData1 = [{"bid_total_amount":1079,"bid_count":8,"bid_date":1530547200000},{"bid_total_amount":3249,"bid_count":19,"bid_date":1530633600000},{"bid_total_amount":4105,"bid_count":23,"bid_date":1530720000000},{"bid_total_amount":4333,"bid_count":25,"bid_date":1530806400000},{"bid_total_amount":2492,"bid_count":14,"bid_date":1530892800000},{"bid_total_amount":2042,"bid_count":13,"bid_date":1530979200000},{"bid_total_amount":2682,"bid_count":16,"bid_date":1531065600000},{"bid_total_amount":1622,"bid_count":10,"bid_date":1531152000000},{"bid_total_amount":2475,"bid_count":15,"bid_date":1531238400000},{"bid_total_amount":1707,"bid_count":10,"bid_date":1531324800000},{"bid_total_amount":692,"bid_count":4,"bid_date":1531411200000},{"bid_total_amount":3443,"bid_count":19,"bid_date":1531497600000},{"bid_total_amount":2831,"bid_count":16,"bid_date":1531584000000},{"bid_total_amount":10394,"bid_count":78,"bid_date":1531670400000},{"bid_total_amount":9741,"bid_count":71,"bid_date":1531756800000},{"bid_total_amount":6409,"bid_count":43,"bid_date":1531843200000},{"bid_total_amount":3760,"bid_count":21,"bid_date":1531929600000}]
 
     export default{
         components: {
@@ -125,111 +81,60 @@
             return{
                 options: {
                     chart: {
-                        type: 'spline',
+                        type: 'spline'
                     },
                     title: {
-                        text: 'Live random data'
+                        text: 'Monthly Average Temperature'
+                    },
+                    subtitle: {
+                        text: 'Source: WorldClimate.com'
                     },
                     xAxis: {
-                        type: 'datetime',
-                        tickPixelInterval: 150,
-                        maxZoom: 20 * 1000
+                        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
                     },
                     yAxis: {
-                        minPadding: 0.2,
-                        maxPadding: 0.2,
                         title: {
-                            text: 'Value',
-                            margin: 80
+                            text: 'Temperature'
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value + '°';
+                            }
                         }
                     },
-                    series: [{
-                        name: '随机数据',
-                        data: []
-                    }]
+                    tooltip: {
+                        crosshairs: true,
+                        shared: true
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        spline: {
+                            marker: {
+                                radius: 4,
+                                lineColor: '#666666',
+                                lineWidth: 1
+                            }
+                        }
+                    },
+                    series: []
                 }
             }
         },
         methods: {
-/*            load(){
+            load(){
                 let lineCharts = this.$refs.lineCharts;
                 lineCharts.delegateMethod('showLoading', 'Loading...');
-/!*                setTimeout(() => {
-                    lineCharts.addSeries(requestData());
-                    lineCharts.hideLoading();
-                }, 2000);*!/
-                this.getList();
-            },*/
-            load(){
-                let lineCharts = this.$refs.
-                var vm = this.$http.get('http://localhost:8080/bbd_ds/vwBidList/getVwBidList/30',{})
-                    .then(function (response) {
-                        vm.json = response.data
-                        lineCharts.chart('container', {
-                            chart: {
-                                zoomType: 'x'
-                            },
-                            title: {
-                                text: 'bidCount Over Time'
-                            },
-                            subtitle: {
-                                text: document.ontouchstart === undefined ?
-                                    'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-                            },
-                            xAxis: {
-                                type: 'datetime'
-                            },
-                            yAxis: {
-                                title: {
-                                    text: 'bidCount'
-                                }
-                            },
-                            legend: {
-                                enabled: false
-                            },
-                            plotOptions: {
-                                area: {
-                                    fillColor: {
-                                        linearGradient: {
-                                            x1: 0,
-                                            y1: 0,
-                                            x2: 0,
-                                            y2: 1
-                                        },
-                                        stops: [
-                                            [0, lineCharts.getOptions().colors[0]],
-                                            [1, lineCharts.Color(lineCharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                                        ]
-                                    },
-                                    marker: {
-                                        radius: 2
-                                    },
-                                    lineWidth: 1,
-                                    states: {
-                                        hover: {
-                                            lineWidth: 1
-                                        }
-                                    },
-                                    threshold: null
-                                }
-                            },
+                setTimeout(() => {
+                    for(var i = 0;i < asyncData.data.length; i++) {
 
- /*                           series: [{
-                                type: 'area',
-                                name: 'Sessions',
-                                data: vm.json.map(d => [new Date(d.date).getTime(), d.sessions])
-                            }]*/
-                            series: [{
-                                type: 'area',
-                                name: 'Sessions',
-                                data: vm.json
-                                    .sort((a,b) => new Date(a.bid_date) - new Date(b.bid_date))
-                                    .map(d => [new Date(d.bid_date).getTime(), d.bid_count])
-                            }]
-                        });
-                    });
+                    lineCharts.getChart().series[1].addPoint();
+/*                    lineCharts.addSeries(asyncData);
+                    lineCharts.hideLoading();*/
+                }, 2000)
             }
-
         }
     }
 </script>
