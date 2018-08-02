@@ -20,7 +20,7 @@ module.exports = merge(webpackBaseConfig, {
         proxy:{
             '/wh/*':
             {
-                target: 'http://localhost:8092',
+                target: 'http://localhost:8088',
                 secure: false  
             }
         },

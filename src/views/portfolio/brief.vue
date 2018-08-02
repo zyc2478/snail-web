@@ -60,9 +60,9 @@
     import VueHighcharts from 'vue2-highcharts'
     const asyncData = {
         name: 'Tokyo',
-/*        marker: {
+        marker: {
             symbol: 'square'
-        },*/
+        },
         data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
             y: 26.5,
             marker: {
@@ -70,9 +70,6 @@
             }
         }, 23.3, 18.3, 13.9, 9.6]
     }
-
-    const asyncData1 = [{"bid_total_amount":1079,"bid_count":8,"bid_date":1530547200000},{"bid_total_amount":3249,"bid_count":19,"bid_date":1530633600000},{"bid_total_amount":4105,"bid_count":23,"bid_date":1530720000000},{"bid_total_amount":4333,"bid_count":25,"bid_date":1530806400000},{"bid_total_amount":2492,"bid_count":14,"bid_date":1530892800000},{"bid_total_amount":2042,"bid_count":13,"bid_date":1530979200000},{"bid_total_amount":2682,"bid_count":16,"bid_date":1531065600000},{"bid_total_amount":1622,"bid_count":10,"bid_date":1531152000000},{"bid_total_amount":2475,"bid_count":15,"bid_date":1531238400000},{"bid_total_amount":1707,"bid_count":10,"bid_date":1531324800000},{"bid_total_amount":692,"bid_count":4,"bid_date":1531411200000},{"bid_total_amount":3443,"bid_count":19,"bid_date":1531497600000},{"bid_total_amount":2831,"bid_count":16,"bid_date":1531584000000},{"bid_total_amount":10394,"bid_count":78,"bid_date":1531670400000},{"bid_total_amount":9741,"bid_count":71,"bid_date":1531756800000},{"bid_total_amount":6409,"bid_count":43,"bid_date":1531843200000},{"bid_total_amount":3760,"bid_count":21,"bid_date":1531929600000}]
-
     export default{
         components: {
             VueHighcharts
@@ -128,11 +125,8 @@
                 let lineCharts = this.$refs.lineCharts;
                 lineCharts.delegateMethod('showLoading', 'Loading...');
                 setTimeout(() => {
-                    for(var i = 0;i < asyncData.data.length; i++) {
-
-                    lineCharts.getChart().series[1].addPoint();
-/*                    lineCharts.addSeries(asyncData);
-                    lineCharts.hideLoading();*/
+                    lineCharts.addSeries(asyncData);
+                    lineCharts.hideLoading();
                 }, 2000)
             }
         }
